@@ -13,15 +13,6 @@
       <option value="America/New_York">New York</option>
       <option value="Asia/Tokyo">Tokyo</option>
     </select>
-    <script>
-      function showCityTime(event) {
-        let currentTime = moment()
-          .tz(event.target.value)
-          .format("dddd, MMMM D, YYYY h:mm A");
-        alert(`It is ${currentTime} in ${event.target.value}`);
-      }
-      let citySelect = document.querySelector("#city-selector");
-      citySelect.addEventListener("change", showCityTime);
-    </script>
+    <script src="src/index.js"></script>
   </body>
 </html>
