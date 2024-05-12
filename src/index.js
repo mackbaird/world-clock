@@ -1,12 +1,3 @@
-function showCityTime(event) {
-  let currentTime = moment()
-    .tz(event.target.value)
-    .format("dddd, MMMM D, YYYY h:mm A");
-  alert(`It is ${currentTime} in ${event.target.value}`);
-}
-let citySelect = document.querySelector("#city-selector");
-citySelect.addEventListener("change", showCityTime);
-
 function updateTime() {
   let newYorkElement = document.querySelector("#new-york");
   let newYorkDateElement = newYorkElement.querySelector(".cityDate");
@@ -37,3 +28,24 @@ function updateTime() {
 }
 updateTime();
 setInterval(updateTime, 1000);
+
+function showCityTime(event) {
+  let selectedTimeZone = event.target.value;
+  let cityName = selectedTimeZone.replace("_", " ").split("/")[1];
+  let selectedCityTime = moment().tz(selectedTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML += `
+    <div class="listedCities">
+      <div>
+        <h2>${cityName}</h2>
+        <div class="cityDate">${selectedCityTime.format("MMMM Do YYYY")}</div>
+      </div>
+      <div class="cityTime">
+        ${selectedCityTime.format("h:mm:ss")}
+        <small>${selectedCityTime.format("A")}</small>
+      </div>
+    </div>
+  `;
+}
+let citySelect = document.querySelector("#city-selector");
+citySelect.addEventListener("change", showCityTime);
