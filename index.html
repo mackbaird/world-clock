@@ -6,13 +6,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.js"></script>
     <title>City Times</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <select name="city-selector" id="city-selector">
-      <option value="Europe/London">London</option>
-      <option value="America/New_York">New York</option>
-      <option value="Asia/Tokyo">Tokyo</option>
-    </select>
+    <div class="container">
+      <h1>World Clock</h1>
+      <select name="city-selector" id="city-selector">
+        <option value="">Select a City</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+      </select>
+      <div class="listedCities">
+        <h2>Los Angeles</h2>
+        <div class="cityDate">May 12, 2024</div>
+        <div class="cityTime">1:48:15 AM</div>
+      </div>
+      <div class="listedCities">
+        <h2>Madrid</h2>
+        <div class="cityDate">May 12, 2024</div>
+        <div class="cityTime">1:48:15 AM</div>
+      </div>
+    </div>
     <footer>
       Coded by Mackenzie Baird, hosted on
       <a href="https://world-clock-baird.netlify.app/" target="_blank"
