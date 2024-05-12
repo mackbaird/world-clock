@@ -48,6 +48,7 @@ function showCityTime(event) {
         <small>${selectedCityTime.format("A")}</small>
       </div>
     </div>
+    <a href="/">Refresh</a>
   `;
 }
 let citySelect = document.querySelector("#city-selector");
